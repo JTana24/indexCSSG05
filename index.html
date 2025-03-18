@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Tiquetes para Conciertos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?concert,stage') no-repeat center center/cover;
+            color: white;
+        }
+        .sidebar {
+            width: 20%;
+            background: rgba(34, 34, 34, 0.9);
+            padding: 20px;
+        }
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .header {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .event-section, .ticket-section, .payment-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(51, 51, 51, 0.9);
+            border-radius: 15px;
+            width: 80%;
+            animation: slideUp 1.5s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .event-list, .ticket-list, .payment-list {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .event-card, .ticket-card, .payment-card {
+            background: rgba(68, 68, 68, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            background-size: cover;
+            background-position: center;
+        }
+        .event-card:hover, .ticket-card:hover, .payment-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+        .event-card:nth-child(1) { background-image: url('https://source.unsplash.com/300x200/?rock-concert'); }
+        .event-card:nth-child(2) { background-image: url('https://source.unsplash.com/300x200/?pop-concert'); }
+        .event-card:nth-child(3) { background-image: url('https://source.unsplash.com/300x200/?festival'); }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><i class="fas fa-home"></i> Inicio</li>
+            <li><i class="fas fa-calendar-alt"></i> Eventos Próximos</li>
+            <li><i class="fas fa-ticket-alt"></i> Venta de Entradas</li>
+            <li><i class="fas fa-credit-card"></i> Medios de Pago</li>
+            <li><i class="fas fa-envelope"></i> Contacto</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">Compra tus tiquetes ahora</div>
+        
+        <div class="event-section">
+            <h3><i class="fas fa-music"></i> Eventos Próximos</h3>
+            <div class="event-list">
+                <div class="event-card">Concierto 1</div>
+                <div class="event-card">Concierto 2</div>
+                <div class="event-card">Concierto 3</div>
+            </div>
+        </div>
+
+        <div class="ticket-section">
+            <h3><i class="fas fa-ticket-alt"></i> Venta de Entradas</h3>
+            <div class="ticket-list">
+                <div class="ticket-card">Entrada VIP</div>
+                <div class="ticket-card">Entrada General</div>
+                <div class="ticket-card">Entrada Preferencial</div>
+            </div>
+        </div>
+
+        <div class="payment-section">
+            <h3><i class="fas fa-credit-card"></i> Medios de Pago</h3>
+            <div class="payment-list">
+                <div class="payment-card">Tarjeta de Crédito</div>
+                <div class="payment-card">PayPal</div>
+                <div class="payment-card">Transferencia Bancaria</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">&copy; 2025 Venta de Tiquetes</div>
+</body>
+</html>
